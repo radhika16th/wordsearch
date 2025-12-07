@@ -31,8 +31,11 @@ Press Ctrl-D to finish and print the solved puzzle.
 
 ### Command-Line Options
 
-Option	            Description
---help	            Prints program information and exits
+### Command-Line Options
+
+| Option   | Description |
+|----------|-------------|
+| `--help` | Prints program information and exits |
 
 ### Input Format
 
@@ -56,14 +59,18 @@ output.h
 ```
 
 ### Code Overview
+
 ###### Main Components
-File	                        Purpose
-main.c	                        Program entry point, CLI handling
-read.c / read.h	                Reads puzzle grid into memory
-copy.c / copy.h	                Memory allocation helpers
-find.c / find.h	                Word search logic
-output.c / output.h	            Prints coloured solved puzzle
-errors.c / errors.h	            Error-handling utilities
+
+| File        | Purpose |
+|-------------|---------|
+| `main.c`    | Program entry point, CLI handling |
+| `read.c` / `read.h` | Reads puzzle grid into memory |
+| `copy.c` / `copy.h` | Memory allocation helpers |
+| `find.c` / `find.h` | Word search logic |
+| `output.c` / `output.h` | Prints coloured solved puzzle |
+| `errors.c` / `errors.h` | Error-handling utilities |
+
 
 ### Compile Instructions
 Using GCC:
@@ -98,6 +105,6 @@ Press Ctrl-D to print the solved puzzle.
 
 ### Author
 
-Raadhikka Gupta
-SFWRENG 2XC3
+Raadhikka Gupta<br>
+SFWRENG 2XC3<br>
 November 2025
