@@ -1,0 +1,38 @@
+name: CI - Test Wordsearch
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    - name: Set up build tools
+      run: sudo apt-get install -y build-essential
+
+    - name: Build wordsearch
+      run: make wordsearch
+
+    - name: Run wordsearch with puzzle and words input
+      run: |
+        ./wordsearch puzzle.txt < words.txt > solved.txt
+
+    - name: Upload executable
+      uses: actions/upload-artifact@v4
+      with:
+        name: wordsearch-executable
+        path: wordsearch
+
+    - name: Upload solved.txt
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: solved-output
+        path: solved.txt
+        
